@@ -74,7 +74,7 @@ router.post('/:id/edit', (req, res) => {
   models.Supplier.findById(id).then((supplier) => {
     return supplier.update(req.body);
   }).then(() => {
-    req.flash('alertMessage', `Success Update Supplier With Id : ${id}`);
+    req.flash('alertMessage', `Sukses Update Supplier Dengan Id : ${id}`);
     req.flash('alertStatus', 'success');
     res.redirect('/suppliers');
   }).catch((err) => {
@@ -88,7 +88,7 @@ router.get('/delete/:id', (req, res) => {
   models.Supplier.findById(id).then((supplier) => {
     return supplier.destroy();
   }).then(() => {
-    req.flash('alertMessage', `Success Delete Supplier With Id : ${id}`);
+    req.flash('alertMessage', `Sukses Hapus Supplier Dengan Id : ${id}`);
     req.flash('alertStatus', 'success');
     res.redirect('/suppliers');
 
@@ -126,7 +126,7 @@ router.get('/:id/additem', (req, res) => {
 router.post('/:id/additem', (req, res) => {
   const id = req.params.id;
   models.SupplierItem.build(req.body).save().then(() => {
-    req.flash('alertMessage', `Success Add Item For Supplier With Id : ${id}`);
+    req.flash('alertMessage', `Sukses Menambahkan Barang Untuk Supplier Dengan Id : ${id}`);
     req.flash('alertStatus', 'success');
     res.redirect(`/suppliers/${id}/additem`);
   }).catch((err) => {
