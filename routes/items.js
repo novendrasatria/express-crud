@@ -75,7 +75,7 @@ router.post('/:id/edit', (req, res) => {
   models.Item.findById(id).then((item) => {
     return item.update(req.body);
   }).then(() => {
-    req.flash('alertMessage', `Success Update Item With Id : ${id}`);
+    req.flash('alertMessage', `Sukses Update Item Dengan With Id : ${id}`);
     req.flash('alertStatus', 'success');
     res.redirect('/items');
   }).catch((err) => {
@@ -89,7 +89,7 @@ router.get('/delete/:id', (req, res) => {
   models.Item.findById(id).then((item) => {
     return item.destroy();
   }).then(() => {
-    req.flash('alertMessage', `Success Delete Item With Id : ${id}`);
+    req.flash('alertMessage', `Sukses Hapus Supplier Dengan : ${id}`);
     req.flash('alertStatus', 'success');
     res.redirect('/items');
 
@@ -102,3 +102,4 @@ router.get('/delete/:id', (req, res) => {
 
 });
 module.exports = router;
+
